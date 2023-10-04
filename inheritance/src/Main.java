@@ -109,6 +109,6 @@ public class Main
 
 // TO COMPILE:
 /*
-  javac -d bin ClassA.java Main.java 
-  java -cp bin inheritance.Main
+  javac -d bin src/*.java
+  java -cp bin src.Main
 */ 
