@@ -1,4 +1,4 @@
-package inheritance;
+package src;
 
 public class Main
 {
@@ -38,21 +38,39 @@ public class Main
     // System.out.println("Call to my private Member:" + ca.privateintA );
     System.out.println("Call to my private Member with getter:" + ca.getprivateint());
     printLine();
-
-    /*
+    
     ClassB cb = new ClassB(1,2,3,4,5,6,7,8);
     System.out.println("-------------TEST CLASS B---------------");
     printLine();
-    System.out.println("Call to my protected Method:");
-    cb.protectedMethod();
-    printLine();
     System.out.println("Call to my public Method:");
     cb.publicMethod();
+    System.out.println("Call to my public Member:" + cb.publicintB );
+    System.out.println("Call to my public Member with getter:" + cb.getpublicint());
+    printLine();
+
     printLine();
     System.out.println("Call to my default Method:");
     cb.defaultMethod();
-      
-    */
+    System.out.println("Call to my default Member:" + cb.defaultintB);
+    System.out.println("Call to my default Member with getter:" + cb.getdefaultint());
+    printLine();
+
+    printLine();
+    System.out.println("Call to my protected Method:");
+    cb.protectedMethod();
+    System.out.println("Call to my protected Member:" + cb.protectedintB);
+    System.out.println("Call to my protected Member with getter:" + cb.getprotectedint());
+    printLine();
+    
+    printLine();
+    System.out.println("Call to my private Method:");
+    cb.publicMethod(); // WHEREAS HERE IT WORKS, CAUSE THE CALL IS INDIRECT AND VIA A PUBLIC METHOD
+    cb.protectedMethod(); // WHEREAS HERE IT WORKS, CAUSE THE CALL IS INDIRECT AND VIA A PROCTED METHOD 
+    // ca.privateMethod(); // WILL CAUSE AN ERROR EVERY SINGLE TIME, CAUSE THE METHOD IS SIMPLY PRIVATE!
+    // System.out.println("Call to my private Member:" + cb.privateintA );
+    System.out.println("Call to my private Member with getter:" + cb.getprivateint());
+    printLine();
+
 
 
     /* 
@@ -86,3 +104,11 @@ public class Main
     
   }
 }
+
+
+
+// TO COMPILE:
+/*
+  javac -d bin ClassA.java Main.java 
+  java -cp bin inheritance.Main
+*/ 

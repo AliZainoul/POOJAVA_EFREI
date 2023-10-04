@@ -1,3 +1,5 @@
+package src;
+
 // Afin de faire hériter B de A, il faut rajouter le mot clé: extends
 // Ainsi: B héritera de la classe A.
 // A va être la classe mère et B la classe fille.
@@ -7,6 +9,7 @@ public class ClassB extends ClassA {
   protected int protectedintB;
   public int publicintB;
   int defaultintB;
+
   public ClassB(
     int _privateintA, int _protectedintA,
     int _publicintA, int _defaultintA,
@@ -32,6 +35,8 @@ public class ClassB extends ClassA {
   }
   protected void protectedMethod(){
     System.out.println("This is class B, I am protected Method");
+    this.privateMethod();
+
   }
   public void publicMethod(){
     System.out.println("This is class B, I am public Method");
@@ -39,6 +44,8 @@ public class ClassB extends ClassA {
   }
   void defaultMethod(){
     System.out.println("This is class B, I am default Method");
+    //this.privateMethod();
+
   }
 }
 /*
