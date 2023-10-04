@@ -30,7 +30,7 @@ public class ClassA {
     System.out.println("This is class A, I am default Method");
   }
   // Getters
-  private int getprivateint(){ return privateintA;}
+  public int getprivateint(){ return privateintA;}
   public int getpublicint(){ return publicintA;}
   public int getdefaultint(){ return defaultintA;}
   public int getprotectedint(){ return protectedintA;}
