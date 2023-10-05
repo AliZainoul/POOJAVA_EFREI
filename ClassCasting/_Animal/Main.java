@@ -23,9 +23,6 @@ public class Main{
     Animal animal = new Animal();
     Cat cat = new Cat();
     Dog dog = new Dog();
-    //System.out.println(animal);
-    //System.out.println(cat);
-    //System.out.println(dog);
     animal.sound();
     cat.sound();
     dog.sound();

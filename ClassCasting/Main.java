@@ -13,6 +13,7 @@ class Dog extends Animal {
 public class Main {
   public static void main(String[] args) {
     Animal animal = new Dog();
+    animal.speak();
     if (animal instanceof Dog) {
       Dog dog = (Dog) animal; // Downcasting
       dog.speak(); // Output: "Dog barks"
