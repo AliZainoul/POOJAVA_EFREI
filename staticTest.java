@@ -1,11 +1,14 @@
 public class staticTest {
 
-    public static int counter;
-    staticTest() {counter++;}
 
-    public static void printLine(){
-        System.out.println("----------------------");
-    }
+    // Member
+    public static int counter;
+
+    // Constructor
+    staticTest() {counter++;}
+    // counter++ <==> counter = counter +1;
+    public static void printLine(){System.out.println("----------------------");}
+    public int getCounter(){return counter;}
     
     public static void main(String[] args) {
         printLine();
