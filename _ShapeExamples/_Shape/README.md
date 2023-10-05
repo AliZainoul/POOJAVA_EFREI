@@ -2,13 +2,17 @@
 
 # Assume that you have this architecture file tree:
 Tree of your directory structure:
-  ```├── README.md
-  ├── Main.java
-  └── src
-      ├── Circle.java
-      ├── Rectangle.java
-      ├── Shape.java
-      └── Triangle.java
+  ```
+    .
+    ├── Main.java
+    ├── README.md
+    └── src
+        ├── Circle.java
+        ├── Rectangle.java
+        ├── Shape.java
+        └── Triangle.java
+
+    2 directories, 6 files
   ```
 
 

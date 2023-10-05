@@ -1,13 +1,12 @@
 public class Triangle extends Shape {
   // Members
-  double a;
-  double b;
-  double c;
+  private double a;
+  private double b;
+  private double c;
 
   // Constructors
   // Default Constructor
-  public Triangle()
-  {
+  public Triangle() {
     super("");
     this.a = 0.0;
     this.b = 0.0;
@@ -15,50 +14,65 @@ public class Triangle extends Shape {
   }
 
   // Default Constructor 2
-  public Triangle(String _name){super(_name);}
+  public Triangle(String _name) {
+    super(_name);
+  }
 
   // Initializer Constructor
-  public Triangle(double _a, double _b, double _c, String _name)
-  {
+  public Triangle(double _a, double _b, double _c, String _name) {
     super(_name);
-    if (_a >= 0 && _b >= 0 && _c >= 0)
-    { 
-      this.a = _a;
-      this.b = _b;
-      this.c = _c;
+    if (_a >= 0 && _b >= 0 && _c >= 0 && isTriangleValid(_a, _b, _c)) {
+        this.a = _a;
+        this.b = _b;
+        this.c = _c;
     }
   }
 
   // Methods
   @Override
-  public double calculateArea()
-  {
+  public double calculateArea() {
+    // HERON FORMULAE
     double s = (a + b + c) / 2;
     return Math.sqrt(s * (s - a) * (s - b) * (s - c));
   }
 
   // Getters
-  public double getA() {return a;}
-  public double getB() {return b;}
-  public double getC() {return c;}
-  //public String getName() {return name;}
+  public double getA() { return a; }
+  public double getB() { return b; }
+  public double getC() { return c; }
 
   // Setters
-  public void setA(double _a) {this.a =  _a;}
-  public void setB(double _b) {this.b = _b;}
-  public void setC(double _c) {this.c = _c;}
-  //public void setName(String _name) {this.name =  _name;}
+  public void setA(double _a) {
+    if (isTriangleValid(_a, b, c)) {
+        this.a = _a;
+    }
+  }
 
-  // Helpers
+  public void setB(double _b) {
+    if (isTriangleValid(a, _b, c)) {
+        this.b = _b;
+    }
+  }
+
+  public void setC(double _c) {
+    if (isTriangleValid(a, b, _c)) {
+        this.c = _c;
+    }
+  }
+
+  // Helper method to check if side lengths can form a valid triangle
+  private static boolean isTriangleValid(double a, double b, double c) {
+    return (a + b > c) && (a + c > b) && (b + c > a);
+  }
+
   @Override
-  public void printShape()
-  {
+  public void printShape() {
     System.out.println(
-    "-------------------------------------------------- \n"  
-    + "Name of Triangle: "  + this.getName() + "\n" 
-    + ", Vertexes = (" + this.getA() + ", " + this.getB() + ", " + this.getC() + ")" + "\n" 
-    + "Area of my Triangle = " + this.calculateArea() + "\n" 
-    + "--------------------------------------------------" + "\n" 
+      "-------------------------------------------------- \n"
+      + "Name of Triangle: " + this.getName() + "\n"
+      + ", Vertexes = (" + this.getA() + ", " + this.getB() + ", " + this.getC() + ")" + "\n"
+      + "Area of my Triangle = " + this.calculateArea() + "\n"
+      + "--------------------------------------------------" + "\n"
     );
   }
 }
